@@ -20,7 +20,7 @@ class APIRouteTests: XCTestCase {
         XCTAssertEqual(url.absoluteString, "https://api.themoviedb.org/3/discover/movie")
         XCTAssertEqual(request.url?.absoluteString, "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&page=\(firstPage)")
     }
-    
+
     // testing Movies List API retrieved URL with Invalid Page Number ( less than 1 )
     // it supposed to ignore the page parameter as the API designed to retrieve the first page by default
     func testAPIMoviesListWithInvalidPageNumber() throws {
@@ -29,30 +29,33 @@ class APIRouteTests: XCTestCase {
         let url = moviesListAPI.asURL()
         let request = moviesListAPI.asRequest()
         XCTAssertEqual(url.absoluteString, "https://api.themoviedb.org/3/discover/movie")
-        XCTAssertEqual(request.url?.absoluteString, "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3")
+        let expectedRequestURL = "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3"
+        XCTAssertEqual(request.url?.absoluteString, expectedRequestURL)
     }
-    
+
     // testing MoviesList API retrieved URL with the first 5 pages
-    func testAPIMoviesListIncrementingPage() throws{
+    func testAPIMoviesListIncrementingPage() throws {
         let numberOfPages = 5
-        for i in 1...numberOfPages{
-            let moviesListAPI = APIRoute.getMoviesList(page: i)
+        for pageNumber in 1...numberOfPages {
+            let moviesListAPI = APIRoute.getMoviesList(page: pageNumber)
             let url = moviesListAPI.asURL()
             let request = moviesListAPI.asRequest()
             XCTAssertEqual(url.absoluteString, "https://api.themoviedb.org/3/discover/movie")
-            XCTAssertEqual(request.url?.absoluteString, "https://api.themoviedb.org/3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&page=\(i)")
+            var expectedRequestURL = "https://api.themoviedb.org/3/discover/movie?"
+            expectedRequestURL += "api_key=c9856d0cb57c3f14bf75bdc6c063b8f3"
+            expectedRequestURL += "&page=\(pageNumber)"
+            XCTAssertEqual(request.url?.absoluteString, expectedRequestURL)
         }
     }
-    
+
     // testing Movie Details API retrieved URL with given movieId
-    func testAPIMovieDetails() throws{
+    func testAPIMovieDetails() throws {
         let movieId = 338953
         let movieDetailsAPI = APIRoute.getMovieDetails(id: movieId)
         let url = movieDetailsAPI.asURL()
         let request = movieDetailsAPI.asRequest()
         XCTAssertEqual(url.absoluteString, "https://api.themoviedb.org/3/movie/\(movieId)")
-        XCTAssertEqual(request.url?.absoluteString, "https://api.themoviedb.org/3/movie/\(movieId)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3")
+        let expectedRequestURL = "https://api.themoviedb.org/3/movie/\(movieId)?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3"
+        XCTAssertEqual(request.url?.absoluteString, expectedRequestURL)
     }
-
-
 }

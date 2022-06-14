@@ -9,11 +9,11 @@ import Foundation
 
 /// Enum that encodes the endpoints of the Movies-api. Injected to the RequestHandler.
 enum APIRoute {
-    case getMoviesList(page:Int)
-    case getMovieDetails(id:Int)
-    case getImage(name:String)
+    case getMoviesList(page: Int)
+    case getMovieDetails(id: Int)
+    case getImage(name: String)
 
-    private var api_key:String { "c9856d0cb57c3f14bf75bdc6c063b8f3" }
+    private var apiKey: String { "c9856d0cb57c3f14bf75bdc6c063b8f3" }
     private var baseListURLString: String { "https://api.themoviedb.org/3/discover/movie" }
     private var baseDetailsURLString: String {"https://api.themoviedb.org/3/movie/"}
     private var baseImageURLString: String { "https://image.tmdb.org/t/p/w500/" }
@@ -33,13 +33,13 @@ enum APIRoute {
 
     private var parameters: [URLQueryItem] {
         var apiParameters = [URLQueryItem]()
-        let apiKeyParameter = URLQueryItem(name: "api_key", value: self.api_key)
+        let apiKeyParameter = URLQueryItem(name: "api_key", value: self.apiKey)
         apiParameters.append(apiKeyParameter)
-        
+
         switch self {
         case .getMoviesList(let page):
             // if the given page is less than 1 so ignore the page parameter the API was designed to retrieve first page by default
-            if page < 1{
+            if page < 1 {
                 return apiParameters
             }
             let pageParamter = URLQueryItem(name: "page", value: String(page))
@@ -50,7 +50,7 @@ enum APIRoute {
         return apiParameters
     }
     
-    func asURL() -> URL{
+    func asURL() -> URL {
         guard let url = url else {
             preconditionFailure("Missing URL for route: \(self)")
         }
@@ -61,7 +61,7 @@ enum APIRoute {
         guard let url = url else {
             preconditionFailure("Missing URL for route: \(self)")
         }
-        if !parameters.isEmpty{
+        if !parameters.isEmpty {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
             components?.queryItems = parameters
 

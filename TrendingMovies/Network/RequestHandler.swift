@@ -8,63 +8,62 @@
 import Foundation
 
 /// This Enum represents request error types
-enum RequestError: Error{
-    case NetworkError(description:String)
-    case ParsingError
-    case NoData
-    
-    var description:String{
+enum RequestError: Error {
+    case networkError(description: String)
+    case parsingError
+    case noData
+
+    var description: String {
         switch self {
-        case .NetworkError(let description):
+        case .networkError(let description):
             return description
-        case .ParsingError:
+        case .parsingError:
             return "Error while parsing json to data model"
-        case .NoData:
+        case .noData:
             return "No Data is returned from request"
         }
     }
-    
-}
 
+}
 
 /// This is RequestHandling implementation returns any Codable Data Model.
 class RequestHandler: RequestHandling {
- 
-    func request<T>(route: APIRoute) async throws -> T where T:Codable {
+
+    func request<T>(route: APIRoute) async throws -> T where T: Codable {
         let request = route.asRequest()
         let session = URLSession.shared
         return try await withCheckedThrowingContinuation { continuation in
-            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            let task = session.dataTask(with: request, completionHandler: { data, _, error -> Void in
                 // Request Error
-                if let e = error{
-                    continuation.resume(with: .failure(RequestError.NetworkError(description: e.localizedDescription)))
+                if let error = error {
+                    let networkError = RequestError.networkError(description: error.localizedDescription)
+                    continuation.resume(with: .failure(networkError))
                 }
                 // check if data is not empty
-                if let data = data{
+                if let data = data {
                     // Try Parsing data
                     if let responseResults = self.parse(data: data, to: T.self) {
                         continuation.resume(with: .success(responseResults))
-                    }else{
+                    } else {
                         // Parsing Error
-                        continuation.resume(with: .failure(RequestError.ParsingError))
+                        continuation.resume(with: .failure(RequestError.parsingError))
                     }
-                }else{
+                } else {
                     // No Data Error
-                    continuation.resume(with: .failure(RequestError.NoData))
+                    continuation.resume(with: .failure(RequestError.noData))
                 }
             })
-            
+
             task.resume()
         }
     }
-    
+
     // Parse any Json data to the given Data Model Type
-    private func parse<T>(data:Data , to type: T.Type) ->T? where T:Codable{
-        do{
+    private func parse<T>(data: Data, to type: T.Type ) -> T? where T: Codable {
+        do {
             let dataObject = try JSONDecoder().decode(type, from: data)
             return dataObject
-        }
-        catch{
+        } catch {
             print(error.localizedDescription)
         }
         return nil

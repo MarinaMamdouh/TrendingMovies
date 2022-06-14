@@ -10,5 +10,5 @@ import Foundation
 /// Protocol for the `RequestHandler`.
 protocol RequestHandling {
     
-    func request<T>(route: APIRoute) async throws -> T where T:Codable
+    func request<T>(route: APIRoute) async throws -> T where T: Codable
 }
