@@ -13,7 +13,21 @@
 		F849ACE52858EF4D00961633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F849ACE32858EF4D00961633 /* Main.storyboard */; };
 		F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F849ACE62858EF4D00961633 /* Assets.xcassets */; };
 		F849ACEA2858EF4D00961633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F849ACE82858EF4D00961633 /* LaunchScreen.storyboard */; };
+		F849ACF32858FC4100961633 /* RequestHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACF22858FC4100961633 /* RequestHandling.swift */; };
+		F849ACF52858FC6800961633 /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACF42858FC6800961633 /* APIRoute.swift */; };
+		F849ACF72859001A00961633 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACF62859001A00961633 /* RequestHandler.swift */; };
+		F849ACFF2859014200961633 /* TrendingMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACFE2859014200961633 /* TrendingMoviesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F849AD002859014200961633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F849ACD22858EF4D00961633 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F849ACD92858EF4D00961633;
+			remoteInfo = TrendingMovies;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F849ACDA2858EF4D00961633 /* TrendingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +38,22 @@
 		F849ACE62858EF4D00961633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F849ACE92858EF4D00961633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F849ACEB2858EF4D00961633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F849ACF22858FC4100961633 /* RequestHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandling.swift; sourceTree = "<group>"; };
+		F849ACF42858FC6800961633 /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		F849ACF62859001A00961633 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		F849ACFC2859014200961633 /* TrendingMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendingMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F849ACFE2859014200961633 /* TrendingMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F849ACD72858EF4D00961633 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F849ACF92859014200961633 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				F849ACDC2858EF4D00961633 /* TrendingMovies */,
+				F849ACFD2859014200961633 /* TrendingMoviesTests */,
 				F849ACDB2858EF4D00961633 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F849ACDA2858EF4D00961633 /* TrendingMovies.app */,
+				F849ACFC2859014200961633 /* TrendingMoviesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,12 +87,31 @@
 				F849ACDD2858EF4D00961633 /* AppDelegate.swift */,
 				F849ACDF2858EF4D00961633 /* SceneDelegate.swift */,
 				F849ACE12858EF4D00961633 /* ViewController.swift */,
+				F849ACF12858FC2C00961633 /* Network */,
 				F849ACE32858EF4D00961633 /* Main.storyboard */,
 				F849ACE62858EF4D00961633 /* Assets.xcassets */,
 				F849ACE82858EF4D00961633 /* LaunchScreen.storyboard */,
 				F849ACEB2858EF4D00961633 /* Info.plist */,
 			);
 			path = TrendingMovies;
+			sourceTree = "<group>";
+		};
+		F849ACF12858FC2C00961633 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F849ACF62859001A00961633 /* RequestHandler.swift */,
+				F849ACF22858FC4100961633 /* RequestHandling.swift */,
+				F849ACF42858FC6800961633 /* APIRoute.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F849ACFD2859014200961633 /* TrendingMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F849ACFE2859014200961633 /* TrendingMoviesTests.swift */,
+			);
+			path = TrendingMoviesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +134,24 @@
 			productReference = F849ACDA2858EF4D00961633 /* TrendingMovies.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F849ACFB2859014200961633 /* TrendingMoviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F849AD022859014200961633 /* Build configuration list for PBXNativeTarget "TrendingMoviesTests" */;
+			buildPhases = (
+				F849ACF82859014200961633 /* Sources */,
+				F849ACF92859014200961633 /* Frameworks */,
+				F849ACFA2859014200961633 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F849AD012859014200961633 /* PBXTargetDependency */,
+			);
+			name = TrendingMoviesTests;
+			productName = TrendingMoviesTests;
+			productReference = F849ACFC2859014200961633 /* TrendingMoviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +164,10 @@
 				TargetAttributes = {
 					F849ACD92858EF4D00961633 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					F849ACFB2859014200961633 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = F849ACD92858EF4D00961633;
 					};
 				};
 			};
@@ -116,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				F849ACD92858EF4D00961633 /* TrendingMovies */,
+				F849ACFB2859014200961633 /* TrendingMoviesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +201,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F849ACFA2859014200961633 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,11 +217,30 @@
 			files = (
 				F849ACE22858EF4D00961633 /* ViewController.swift in Sources */,
 				F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */,
+				F849ACF72859001A00961633 /* RequestHandler.swift in Sources */,
+				F849ACF32858FC4100961633 /* RequestHandling.swift in Sources */,
 				F849ACE02858EF4D00961633 /* SceneDelegate.swift in Sources */,
+				F849ACF52858FC6800961633 /* APIRoute.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F849ACF82859014200961633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F849ACFF2859014200961633 /* TrendingMoviesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F849AD012859014200961633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F849ACD92858EF4D00961633 /* TrendingMovies */;
+			targetProxy = F849AD002859014200961633 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F849ACE32858EF4D00961633 /* Main.storyboard */ = {
@@ -336,6 +432,42 @@
 			};
 			name = Release;
 		};
+		F849AD032859014200961633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6WH3S8GMZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.MarinaRiad.TrendingMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrendingMovies.app/TrendingMovies";
+			};
+			name = Debug;
+		};
+		F849AD042859014200961633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6WH3S8GMZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.MarinaRiad.TrendingMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrendingMovies.app/TrendingMovies";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +485,15 @@
 			buildConfigurations = (
 				F849ACEF2858EF4D00961633 /* Debug */,
 				F849ACF02858EF4D00961633 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F849AD022859014200961633 /* Build configuration list for PBXNativeTarget "TrendingMoviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F849AD032859014200961633 /* Debug */,
+				F849AD042859014200961633 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
