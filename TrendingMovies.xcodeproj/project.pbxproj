@@ -20,6 +20,7 @@
 		F859CBD2285E594A00F8DEBC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD1285E594A00F8DEBC /* BaseViewController.swift */; };
 		F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */; };
 		F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */; };
+		F859CBDE285E6CBB00F8DEBC /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = F859CBDD285E6CBB00F8DEBC /* English.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F859CBD1285E594A00F8DEBC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConstants.swift; sourceTree = "<group>"; };
+		F859CBDD285E6CBB00F8DEBC /* English.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = English.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				F859CBD6285E69A100F8DEBC /* AppDelegate */,
 				F859CBD3285E697C00F8DEBC /* Modules */,
+				F859CBDF285E6CC500F8DEBC /* Localization */,
 				F849AD0628590F0A00961633 /* Data Models */,
 				F849ACF12858FC2C00961633 /* Network */,
 				F859CBD8285E6B4100F8DEBC /* Constants */,
@@ -179,6 +182,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		F859CBDF285E6CC500F8DEBC /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F859CBDD285E6CBB00F8DEBC /* English.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +274,7 @@
 			files = (
 				F849ACEA2858EF4D00961633 /* LaunchScreen.storyboard in Resources */,
 				F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */,
+				F859CBDE285E6CBB00F8DEBC /* English.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
