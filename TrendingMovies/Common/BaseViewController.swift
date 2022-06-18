@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol UIHandling{
+protocol UIHandling {
     func styleUIComponents()
     func autoLayoutUIComponents()
 }
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UIHandling {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,6 @@ class BaseViewController: UIViewController {
         autoLayoutUIComponents()
     }
     
-}
-
-extension BaseViewController: UIHandling{
     func styleUIComponents() {
         // Style the UI Componentes here e.g. tables, Buttons, Labels,... etc
     }
@@ -30,6 +27,5 @@ extension BaseViewController: UIHandling{
     func autoLayoutUIComponents() {
         // handle the AutoLayout of UI components ( Anchors and constraints )
     }
-    
     
 }
