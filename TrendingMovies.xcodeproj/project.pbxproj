@@ -19,6 +19,7 @@
 		F849ACFF2859014200961633 /* TrendingMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACFE2859014200961633 /* TrendingMoviesTests.swift */; };
 		F849AD0828590F4700961633 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849AD0728590F4700961633 /* MoviesList.swift */; };
 		F849AD0A2859111200961633 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849AD092859111200961633 /* MovieDetails.swift */; };
+		F859CBD2285E594A00F8DEBC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD1285E594A00F8DEBC /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F849ACFE2859014200961633 /* TrendingMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesTests.swift; sourceTree = "<group>"; };
 		F849AD0728590F4700961633 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
 		F849AD092859111200961633 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		F859CBD1285E594A00F8DEBC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				F849ACDD2858EF4D00961633 /* AppDelegate.swift */,
 				F849ACDF2858EF4D00961633 /* SceneDelegate.swift */,
 				F849ACE12858EF4D00961633 /* ViewController.swift */,
+				F859CBD1285E594A00F8DEBC /* BaseViewController.swift */,
 				F849AD0628590F0A00961633 /* Data Models */,
 				F849ACF12858FC2C00961633 /* Network */,
 				F849ACE32858EF4D00961633 /* Main.storyboard */,
@@ -256,6 +259,7 @@
 				F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */,
 				F849AD0A2859111200961633 /* MovieDetails.swift in Sources */,
 				F849ACF72859001A00961633 /* RequestHandler.swift in Sources */,
+				F859CBD2285E594A00F8DEBC /* BaseViewController.swift in Sources */,
 				F849ACF32858FC4100961633 /* RequestHandling.swift in Sources */,
 				F849ACE02858EF4D00961633 /* SceneDelegate.swift in Sources */,
 				F849ACF52858FC6800961633 /* APIRoute.swift in Sources */,
