@@ -8,7 +8,9 @@
 import UIKit
 
 class MoviesListViewController: BaseViewController {
-    var tableView: UITableView?
+    var tableView = UITableView()
+    var moviesList = [Movie]()
+    var viewModel = MoviesListViewModel()
     var currentMovie: Movie? {
         didSet {
             fetchCurrentMovieDetails()
@@ -17,23 +19,73 @@ class MoviesListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let titleLocalizedKey =  Constants.NavigationBarTitles.moviesList
-        title = String(localizedKey: titleLocalizedKey)
-        fetchFirstPageOfMovies()
-        
+
+        setupTable()
+        requestMovies()
     }
     
     override func styleUIComponents() {
         super.styleUIComponents()
         // Style tableView
+        let titleLocalizedKey =  Constants.NavigationBarTitles.moviesList
+        title = String(localizedKey: titleLocalizedKey)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
     }
     
     override func autoLayoutUIComponents() {
         super.autoLayoutUIComponents()
+        
         // Auto Layout TableView
+        self.view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            // top Constraint
+            tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            // Leading Constraint
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            // Trailing Constraint
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            // Bottom Constraint
+            tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
     }
 
+}
+
+// Request Data from ViewModel
+
+extension MoviesListViewController {
+    
+    func requestMovies() {
+        Task {
+            do {
+                self.moviesList = try await viewModel.getListOfMovies()
+            } catch {
+                
+            }
+        }
+    }
+}
+
+// UItableView Delegates and Datasource
+
+extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return moviesList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        return cell
+    }
+    
+    func setupTable() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
 }
 
 // testing data to be removed

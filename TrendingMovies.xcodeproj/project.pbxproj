@@ -22,6 +22,7 @@
 		F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */; };
 		F859CBDE285E6CBB00F8DEBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F859CBDD285E6CBB00F8DEBC /* Localizable.strings */; };
 		F859CBE1285E6D7000F8DEBC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBE0285E6D7000F8DEBC /* LocalizedString.swift */; };
+		F859CBE3285E711B00F8DEBC /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBE2285E711B00F8DEBC /* MoviesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConstants.swift; sourceTree = "<group>"; };
 		F859CBDD285E6CBB00F8DEBC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F859CBE0285E6D7000F8DEBC /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		F859CBE2285E711B00F8DEBC /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F849ACE12858EF4D00961633 /* MoviesListViewController.swift */,
+				F859CBE2285E711B00F8DEBC /* MoviesListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				F849AD0828590F4700961633 /* MoviesList.swift in Sources */,
 				F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */,
 				F859CBE1285E6D7000F8DEBC /* LocalizedString.swift in Sources */,
+				F859CBE3285E711B00F8DEBC /* MoviesListViewModel.swift in Sources */,
 				F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */,
 				F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */,
 				F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */,
