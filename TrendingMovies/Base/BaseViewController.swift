@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol UIHandling {
-    func styleUIComponents()
-    func autoLayoutUIComponents()
-}
-
 class BaseViewController: UIViewController, UIHandling {
     
     override func viewDidLoad() {

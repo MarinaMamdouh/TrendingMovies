@@ -11,17 +11,13 @@ class MoviesListViewController: BaseViewController {
     var tableView = UITableView()
     var moviesList = [Movie]()
     var viewModel = MoviesListViewModel()
-    var currentMovie: Movie? {
-        didSet {
-            fetchCurrentMovieDetails()
-        }
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        setupViewModel()
         setupTable()
-        requestMovies()
+        viewModel.loadMovies()
     }
     
     override func styleUIComponents() {
@@ -53,74 +49,49 @@ class MoviesListViewController: BaseViewController {
 
 }
 
-// Request Data from ViewModel
+// ViewModel Updating Handling
 
-extension MoviesListViewController {
-    
-    func requestMovies() {
-        Task {
-            do {
-                self.moviesList = try await viewModel.getListOfMovies()
-            } catch {
-                
-            }
+extension MoviesListViewController: ViewModelDelegate {
+    func viewModelDidUpdate() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
+        
     }
+    
+    func setupViewModel() {
+        viewModel.delegate = self
+    }
+    
 }
 
 // UItableView Delegates and Datasource
 
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviesList.count
+        return viewModel.moviesCount
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellContentHeight = Constants.ImagesSizes.movieCellImage.height
+        let heightPadding = CGFloat(Constants.heightPadding)
+        return cellContentHeight + heightPadding
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as? MovieTableViewCell
+        guard let cell = cell else {
+            return UITableViewCell()
+        }
+        let movieToBeDisplayed = viewModel.movies[indexPath.row]
+        cell.configure(with: movieToBeDisplayed)
         return cell
     }
     
     func setupTable() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
     }
     
-}
-
-// testing data to be removed
-
-extension MoviesListViewController {
-    func fetchFirstPageOfMovies() {
-        let requestHandler = RequestHandler()
-        Task {
-            do {
-                let moviesList: MoviesList =  try await requestHandler.request(route: APIRoute.getMoviesList(page: 1))
-                print("---------- Movies List -----------")
-                for movie in moviesList.results {
-                    DispatchQueue.main.async {
-                        print(movie)
-                        self.currentMovie = movie
-                    }
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func fetchCurrentMovieDetails() {
-        if let currentMovie = currentMovie {
-            let requestHandler = RequestHandler()
-            Task {
-                let details: MovieDetails = try await requestHandler.request(route: APIRoute.getMovieDetails(id: currentMovie.id))
-                DispatchQueue.main.async {
-                    print("---------- Current Movie ------")
-                    print(currentMovie)
-                    print("----- Movie Details -------")
-                    print(details)
-                }
-            }
-        }
-    }
 }
