@@ -18,6 +18,8 @@
 		F849AD0828590F4700961633 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849AD0728590F4700961633 /* MoviesList.swift */; };
 		F849AD0A2859111200961633 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849AD092859111200961633 /* MovieDetails.swift */; };
 		F859CBD2285E594A00F8DEBC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD1285E594A00F8DEBC /* BaseViewController.swift */; };
+		F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */; };
+		F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		F849AD0728590F4700961633 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
 		F849AD092859111200961633 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		F859CBD1285E594A00F8DEBC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				F859CBD3285E697C00F8DEBC /* Modules */,
 				F849AD0628590F0A00961633 /* Data Models */,
 				F849ACF12858FC2C00961633 /* Network */,
+				F859CBD8285E6B4100F8DEBC /* Constants */,
 				F859CBD7285E69AF00F8DEBC /* Common */,
 				F849ACE62858EF4D00961633 /* Assets.xcassets */,
 				F849ACE82858EF4D00961633 /* LaunchScreen.storyboard */,
@@ -163,6 +168,15 @@
 				F859CBD1285E594A00F8DEBC /* BaseViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		F859CBD8285E6B4100F8DEBC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */,
+				F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F849AD0828590F4700961633 /* MoviesList.swift in Sources */,
+				F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */,
 				F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */,
+				F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */,
 				F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */,
 				F849AD0A2859111200961633 /* MovieDetails.swift in Sources */,
 				F849ACF72859001A00961633 /* RequestHandler.swift in Sources */,
