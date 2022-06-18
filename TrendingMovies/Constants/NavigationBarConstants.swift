@@ -9,7 +9,7 @@ import Foundation
 
 extension Constants {
     
-    enum NavigationBarTitles: String {
-        case moviesList = "Movies"
+    enum NavigationBarTitles {
+        static let moviesList = "MoviesListNavigationBarTitle"
     }
 }

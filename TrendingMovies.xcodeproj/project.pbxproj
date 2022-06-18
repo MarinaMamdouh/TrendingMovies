@@ -20,7 +20,8 @@
 		F859CBD2285E594A00F8DEBC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD1285E594A00F8DEBC /* BaseViewController.swift */; };
 		F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */; };
 		F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */; };
-		F859CBDE285E6CBB00F8DEBC /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = F859CBDD285E6CBB00F8DEBC /* English.strings */; };
+		F859CBDE285E6CBB00F8DEBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F859CBDD285E6CBB00F8DEBC /* Localizable.strings */; };
+		F859CBE1285E6D7000F8DEBC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859CBE0285E6D7000F8DEBC /* LocalizedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		F859CBD1285E594A00F8DEBC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F859CBD9285E6B6300F8DEBC /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		F859CBDB285E6B7B00F8DEBC /* NavigationBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConstants.swift; sourceTree = "<group>"; };
-		F859CBDD285E6CBB00F8DEBC /* English.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = English.strings; sourceTree = "<group>"; };
+		F859CBDD285E6CBB00F8DEBC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F859CBE0285E6D7000F8DEBC /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +187,8 @@
 		F859CBDF285E6CC500F8DEBC /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				F859CBDD285E6CBB00F8DEBC /* English.strings */,
+				F859CBDD285E6CBB00F8DEBC /* Localizable.strings */,
+				F859CBE0285E6D7000F8DEBC /* LocalizedString.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 			files = (
 				F849ACEA2858EF4D00961633 /* LaunchScreen.storyboard in Resources */,
 				F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */,
-				F859CBDE285E6CBB00F8DEBC /* English.strings in Resources */,
+				F859CBDE285E6CBB00F8DEBC /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +318,7 @@
 			files = (
 				F849AD0828590F4700961633 /* MoviesList.swift in Sources */,
 				F859CBDA285E6B6300F8DEBC /* GeneralConstants.swift in Sources */,
+				F859CBE1285E6D7000F8DEBC /* LocalizedString.swift in Sources */,
 				F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */,
 				F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */,
 				F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */,

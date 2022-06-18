@@ -17,7 +17,8 @@ class MoviesListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = Constants.NavigationBarTitles.moviesList.rawValue
+        let titleLocalizedKey =  Constants.NavigationBarTitles.moviesList
+        title = String(localizedKey: titleLocalizedKey)
         fetchFirstPageOfMovies()
         
     }
