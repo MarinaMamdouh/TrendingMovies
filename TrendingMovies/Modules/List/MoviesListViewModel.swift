@@ -8,13 +8,15 @@
 import Foundation
 
 class MoviesListViewModel: ViewModelType {
-    private var currentPage = -1
+    private var currentPage = 0
     private var requestHandler = RequestHandler()
+    public var isLoading = false
     var moviesCount: Int {
         self.movies.count
     }
     private(set) var movies = [Movie]() {
         didSet {
+            changeLoadingStatus()
             delegate?.viewModelDidUpdate()
         }
     }
@@ -22,9 +24,10 @@ class MoviesListViewModel: ViewModelType {
     
     func loadMovies() {
         self.goToNextPage()
+        changeLoadingStatus()
         Task { [weak self] in
             let movies: MoviesList = try await requestHandler.request(route: APIRoute.getMoviesList(page: currentPage))
-            self?.movies = movies.results
+            self?.movies.append(contentsOf: movies.results)
         
         }
         
@@ -32,5 +35,9 @@ class MoviesListViewModel: ViewModelType {
     
     private func goToNextPage() {
         currentPage += 1
+    }
+    
+    private func changeLoadingStatus(){
+        self.isLoading.toggle()
     }
 }

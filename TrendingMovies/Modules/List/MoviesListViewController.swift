@@ -22,9 +22,10 @@ class MoviesListViewController: BaseViewController {
     
     override func styleUIComponents() {
         super.styleUIComponents()
-        // Style tableView
+        // Style NavigationBar
         let titleLocalizedKey =  Constants.NavigationBarTitles.moviesList
         title = String(localizedKey: titleLocalizedKey)
+        // Style tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
     }
@@ -47,22 +48,6 @@ class MoviesListViewController: BaseViewController {
         
     }
 
-}
-
-// ViewModel Updating Handling
-
-extension MoviesListViewController: ViewModelDelegate {
-    func viewModelDidUpdate() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
-        
-    }
-    
-    func setupViewModel() {
-        viewModel.delegate = self
-    }
-    
 }
 
 // UItableView Delegates and Datasource
@@ -92,6 +77,53 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+    }
+    
+}
+
+// Scrolling Handling Methods
+
+extension MoviesListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if didReachBottom(scrollView) && !viewModel.isLoading {
+            self.tableView.tableFooterView = createSpinner()
+            viewModel.loadMovies()
+        }
+    }
+    
+    func didReachBottom(_ scrollView: UIScrollView) -> Bool {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 100.0 {
+            return true
+        }
+        
+        return false
+    }
+    
+    func createSpinner() -> UIView {
+        let spinnerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.frame.width, height: 100)))
+        let spinnerActivity =  UIActivityIndicatorView()
+        spinnerActivity.center = spinnerView.center
+        spinnerView.addSubview(spinnerActivity)
+        spinnerActivity.startAnimating()
+        return spinnerView
+    }
+}
+
+// ViewModel Updating Handling
+
+extension MoviesListViewController: ViewModelDelegate {
+    func viewModelDidUpdate() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+    }
+    
+    func setupViewModel() {
+        viewModel.delegate = self
     }
     
 }
