@@ -12,10 +12,10 @@ class ImageRequest {
     func request(route: APIRoute) async throws -> UIImage {
         // check if it is in caching
         let request = route.asRequest()
-//        if let imageFromCache = ImageCaching.reference.check(key: request as AnyObject){
-//
-//            return imageFromCache
-//        }
+        let urlOfImage = route.asURL() as NSURL
+        if let imageFromCache = ImageCaching.reference.getData(ofKey: urlOfImage) {
+            return imageFromCache
+        }
         let session = URLSession.shared
         return try await withCheckedThrowingContinuation { continuation in
             let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
@@ -31,7 +31,7 @@ class ImageRequest {
                         
                     }
                     // Cache the image
-                    //ImageCaching.reference.save(image: image, withKey: request as AnyObject)
+                    ImageCaching.reference.save(data: image, withKey: urlOfImage)
                     continuation.resume(with: .success(image))
                 }
             })

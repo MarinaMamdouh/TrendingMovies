@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F83ED086285F7A1300A24670 /* CacheHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ED085285F7A1300A24670 /* CacheHandling.swift */; };
+		F83ED088285F7A6A00A24670 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ED087285F7A6900A24670 /* ImageCaching.swift */; };
 		F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACDD2858EF4D00961633 /* AppDelegate.swift */; };
 		F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACE12858EF4D00961633 /* MoviesListViewController.swift */; };
 		F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F849ACE62858EF4D00961633 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F83ED085285F7A1300A24670 /* CacheHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHandling.swift; sourceTree = "<group>"; };
+		F83ED087285F7A6900A24670 /* ImageCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
 		F849ACDA2858EF4D00961633 /* TrendingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F849ACDD2858EF4D00961633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F849ACE12858EF4D00961633 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F83ED084285F79D600A24670 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				F83ED085285F7A1300A24670 /* CacheHandling.swift */,
+				F83ED087285F7A6900A24670 /* ImageCaching.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
 		F849ACD12858EF4D00961633 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 				F859CBD3285E697C00F8DEBC /* Modules */,
 				F859CBDF285E6CC500F8DEBC /* Localization */,
 				F849AD0628590F0A00961633 /* Data Models */,
+				F83ED084285F79D600A24670 /* Caching */,
 				F859CBF0285E7CF700F8DEBC /* ImageHandling */,
 				F849ACF12858FC2C00961633 /* Network */,
 				F859CBD8285E6B4100F8DEBC /* Constants */,
@@ -362,6 +376,7 @@
 				F859CBE3285E711B00F8DEBC /* MoviesListViewModel.swift in Sources */,
 				F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */,
 				F859CBF6285E86D400F8DEBC /* Fonts.swift in Sources */,
+				F83ED088285F7A6A00A24670 /* ImageCaching.swift in Sources */,
 				F859CBDC285E6B7B00F8DEBC /* NavigationBarConstants.swift in Sources */,
 				F859CBEF285E7C5D00F8DEBC /* ImageRequest.swift in Sources */,
 				F859CBEB285E7A9100F8DEBC /* MovieTableViewCell.swift in Sources */,
@@ -375,6 +390,7 @@
 				F859CBE5285E752A00F8DEBC /* UIHandling.swift in Sources */,
 				F859CBE9285E764B00F8DEBC /* ViewModelDelegate.swift in Sources */,
 				F849ACF52858FC6800961633 /* APIRoute.swift in Sources */,
+				F83ED086285F7A1300A24670 /* CacheHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
