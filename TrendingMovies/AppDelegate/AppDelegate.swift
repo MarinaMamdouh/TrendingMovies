@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func invokeFirstViewController() {
         window =  UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .systemBackground
         
         let movieListViewController = MoviesListViewController()
         let mainNavigationController =  UINavigationController(rootViewController: movieListViewController)

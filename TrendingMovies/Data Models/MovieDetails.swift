@@ -8,7 +8,10 @@
 import Foundation
 
 struct MovieDetails: Codable {
+    let englishTitle: String
+    let originalTitle: String
     let overview: String
+    let imagePath: String
     let genres: [Genre]
     let vote: Double
     let votesCount: Int
@@ -22,6 +25,9 @@ extension MovieDetails {
         case revenue
         case budget
         case genres
+        case englishTitle = "title"
+        case originalTitle = "original_title"
+        case imagePath = "poster_path"
         case vote = "vote_average"
         case votesCount = "vote_count"
     }

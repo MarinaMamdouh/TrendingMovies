@@ -73,6 +73,28 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMovie = viewModel.movies[indexPath.row]
+        Task {
+            do {
+                let details = try await viewModel.getDetails(of: selectedMovie)
+                launchMovieDetailsViewController(with: details)
+                
+            } catch {
+                // show alert of the error or something
+            }
+            
+        }
+    }
+    
+    func launchMovieDetailsViewController(with details: MovieDetails) {
+        // create the MovieDetails Module
+        let movieDetailsViewController = MovieDetailsViewController()
+        movieDetailsViewController.viewModel = MovieDetailsViewModel(details)
+        // push it to the app navigationController
+        self.navigationController?.pushViewController(movieDetailsViewController, animated: true)
+    }
+    
     func setupTable() {
         self.tableView.delegate = self
         self.tableView.dataSource = self

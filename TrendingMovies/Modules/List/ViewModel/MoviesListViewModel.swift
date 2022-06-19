@@ -33,6 +33,12 @@ class MoviesListViewModel: ViewModelType {
         
     }
     
+    func getDetails(of movie: Movie) async throws -> MovieDetails {
+        let details: MovieDetails = try await requestHandler.request(route: APIRoute.getMovieDetails(id: movie.id))
+        return details
+        
+    }
+    
     private func goToNextPage() {
         currentPage += 1
     }
