@@ -9,4 +9,5 @@ import UIKit
 
 enum Constants {
     static let heightPadding = 20
+    static let spinnerViewHeight = 100
 }

@@ -37,7 +37,7 @@ class MoviesListViewModel: ViewModelType {
         currentPage += 1
     }
     
-    private func changeLoadingStatus(){
+    private func changeLoadingStatus() {
         self.isLoading.toggle()
     }
 }

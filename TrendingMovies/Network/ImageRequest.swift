@@ -39,4 +39,5 @@ class ImageRequest {
             task.resume()
         }
     }
+
 }

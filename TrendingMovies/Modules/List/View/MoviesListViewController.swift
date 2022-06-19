@@ -94,8 +94,9 @@ extension MoviesListViewController: UIScrollViewDelegate {
     func didReachBottom(_ scrollView: UIScrollView) -> Bool {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        let remaingHeight = maximumOffset - currentOffset
         
-        if maximumOffset - currentOffset <= 100.0 {
+        if remaingHeight <= CGFloat(Constants.spinnerViewHeight) {
             return true
         }
         
@@ -103,7 +104,7 @@ extension MoviesListViewController: UIScrollViewDelegate {
     }
     
     func createSpinner() -> UIView {
-        let spinnerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.frame.width, height: 100)))
+        let spinnerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.frame.width, height: CGFloat(Constants.spinnerViewHeight))))
         let spinnerActivity =  UIActivityIndicatorView()
         spinnerActivity.center = spinnerView.center
         spinnerView.addSubview(spinnerActivity)
