@@ -12,7 +12,7 @@ enum RequestError: Error {
     case networkError(description: String)
     case parsingError
     case noData
-
+    // for debugging mode
     var description: String {
         switch self {
         case .networkError(let description):
@@ -23,16 +23,27 @@ enum RequestError: Error {
             return "No Data is returned from request"
         }
     }
-    
-    var localizedMessage: String {
-        switch self {
-        case .networkError(_):
-            return String(localizedKey: Constants.ErrorMessages.networkError)
-        case .parsingError:
-            return String(localizedKey: Constants.ErrorMessages.parsingDataError)
-        case .noData:
-            return String(localizedKey: Constants.ErrorMessages.noData)
-        }
-    }
+}
 
+extension RequestError: LocalizedError {
+    var errorDescription: String? {
+           switch self {
+           case .networkError(_):
+               return NSLocalizedString(
+                String(localizedKey: Constants.ErrorMessages.networkError),
+                   comment: ""
+               )
+           case .parsingError:
+               return NSLocalizedString(
+                String(localizedKey: Constants.ErrorMessages.parsingDataError),
+                   comment: ""
+               )
+           case .noData:
+               return NSLocalizedString(
+                String(localizedKey: Constants.ErrorMessages.noData),
+                   comment: ""
+               )
+
+           }
+       }
 }

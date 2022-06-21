@@ -14,6 +14,15 @@ class MoviesListViewModel: ViewModelType {
     var moviesCount: Int {
         self.movies.count
     }
+    var errorMessage: RequestError? {
+        didSet {
+            guard errorMessage != nil else {
+                return
+            }
+            changeLoadingStatus()
+            delegate?.viewModelHasError()
+        }
+    }
     private(set) var movies = [Movie]() {
         didSet {
             changeLoadingStatus()
@@ -26,8 +35,15 @@ class MoviesListViewModel: ViewModelType {
         self.goToNextPage()
         changeLoadingStatus()
         Task { [weak self] in
-            let movies: MoviesList = try await requestHandler.request(route: APIRoute.getMoviesList(page: currentPage))
-            self?.movies.append(contentsOf: movies.results)
+            do {
+                let movies: MoviesList = try await requestHandler.request(route: APIRoute.getMoviesList(page: currentPage))
+                self?.movies.append(contentsOf: movies.results)
+            } catch {
+                guard error is RequestError else {
+                    return
+                }
+                errorMessage = error as? RequestError
+            }
         
         }
         

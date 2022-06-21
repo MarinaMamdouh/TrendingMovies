@@ -16,8 +16,7 @@
 		F83ED09A285FA29800A24670 /* MoneyFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ED099285FA29800A24670 /* MoneyFormatting.swift */; };
 		F846496728620E7E0041701B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F846496628620E7E0041701B /* Errors.swift */; };
 		F846496928620EB70041701B /* ErrorsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F846496828620EB70041701B /* ErrorsMessages.swift */; };
-		F846496C286210ED0041701B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F846496A286210ED0041701B /* ErrorView.swift */; };
-		F846496D286210ED0041701B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F846496B286210ED0041701B /* ErrorView.xib */; };
+		F846496F286218F30041701B /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F846496E286218F30041701B /* ErrorAlert.swift */; };
 		F849ACDE2858EF4D00961633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACDD2858EF4D00961633 /* AppDelegate.swift */; };
 		F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ACE12858EF4D00961633 /* MoviesListViewController.swift */; };
 		F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F849ACE62858EF4D00961633 /* Assets.xcassets */; };
@@ -65,8 +64,7 @@
 		F83ED099285FA29800A24670 /* MoneyFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyFormatting.swift; sourceTree = "<group>"; };
 		F846496628620E7E0041701B /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		F846496828620EB70041701B /* ErrorsMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsMessages.swift; sourceTree = "<group>"; };
-		F846496A286210ED0041701B /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		F846496B286210ED0041701B /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		F846496E286218F30041701B /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		F849ACDA2858EF4D00961633 /* TrendingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F849ACDD2858EF4D00961633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F849ACE12858EF4D00961633 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
@@ -185,8 +183,7 @@
 		F846496528620E670041701B /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
-				F846496A286210ED0041701B /* ErrorView.swift */,
-				F846496B286210ED0041701B /* ErrorView.xib */,
+				F846496E286218F30041701B /* ErrorAlert.swift */,
 				F846496628620E7E0041701B /* Errors.swift */,
 			);
 			path = "Error Handling";
@@ -413,7 +410,6 @@
 				F849ACEA2858EF4D00961633 /* LaunchScreen.storyboard in Resources */,
 				F849ACE72858EF4D00961633 /* Assets.xcassets in Resources */,
 				F859CBDE285E6CBB00F8DEBC /* Localizable.strings in Resources */,
-				F846496D286210ED0041701B /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,12 +455,12 @@
 				F846496728620E7E0041701B /* Errors.swift in Sources */,
 				F83ED09A285FA29800A24670 /* MoneyFormatting.swift in Sources */,
 				F859CBED285E7AE000F8DEBC /* TableCellsIdentifiers.swift in Sources */,
-				F846496C286210ED0041701B /* ErrorView.swift in Sources */,
 				F859CBDA285E6B6300F8DEBC /* Constants.swift in Sources */,
 				F859CBE1285E6D7000F8DEBC /* LocalizedString.swift in Sources */,
 				F859CBE3285E711B00F8DEBC /* MoviesListViewModel.swift in Sources */,
 				F849ACE22858EF4D00961633 /* MoviesListViewController.swift in Sources */,
 				F859CBF6285E86D400F8DEBC /* Fonts.swift in Sources */,
+				F846496F286218F30041701B /* ErrorAlert.swift in Sources */,
 				F83ED091285F838700A24670 /* MovieDetailsViewController.swift in Sources */,
 				F83ED095285F969E00A24670 /* MovieStatisticsView.swift in Sources */,
 				F83ED088285F7A6A00A24670 /* ImageCaching.swift in Sources */,

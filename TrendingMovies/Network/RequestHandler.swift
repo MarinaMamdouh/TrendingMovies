@@ -19,6 +19,7 @@ class RequestHandler: RequestHandling {
                 if let error = error {
                     let networkError = RequestError.networkError(description: error.localizedDescription)
                     continuation.resume(with: .failure(networkError))
+                    return
                 }
                 // check if data is not empty
                 if let data = data {

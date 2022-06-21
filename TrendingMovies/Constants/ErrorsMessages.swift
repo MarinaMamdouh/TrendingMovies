@@ -8,6 +8,10 @@
 import Foundation
 
 extension Constants {
+    enum AlertTexts {
+        static let title = "Alert"
+        static let okButton = "ok"
+    }
     
     enum ErrorMessages {
         static let networkError = "NetworkErrorMessage"

@@ -9,7 +9,6 @@ import UIKit
 
 class MoviesListViewController: BaseViewController {
     var tableView = UITableView()
-    var moviesList = [Movie]()
     var viewModel = MoviesListViewModel()
     
     override func viewDidLoad() {
@@ -27,7 +26,6 @@ class MoviesListViewController: BaseViewController {
         title = String(localizedKey: titleLocalizedKey)
         // Style tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     override func autoLayoutUIComponents() {
@@ -81,7 +79,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
                 launchMovieDetailsViewController(with: details)
                 
             } catch {
-                // show alert of the error or something
+                self.showAlert(withMessage: error.localizedDescription)
             }
             
         }
@@ -138,6 +136,12 @@ extension MoviesListViewController: UIScrollViewDelegate {
 // ViewModel Updating Handling
 
 extension MoviesListViewController: ViewModelDelegate {
+    func viewModelHasError() {
+        DispatchQueue.main.async { [weak self] in
+            self?.handleViewModelError()
+        }
+    }
+    
     func viewModelDidUpdate() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
@@ -149,4 +153,17 @@ extension MoviesListViewController: ViewModelDelegate {
         viewModel.delegate = self
     }
     
+}
+
+// Error Handling
+
+extension MoviesListViewController {
+    
+    func handleViewModelError() {
+        if let errorMessage = viewModel.errorMessage?.errorDescription {
+            if viewModel.movies.isEmpty {
+                self.showAlert(withMessage: errorMessage)
+            }
+        }
+    }
 }

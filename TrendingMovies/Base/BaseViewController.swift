@@ -11,6 +11,7 @@ class BaseViewController: UIViewController, UIHandling {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .systemBackground
         styleUIComponents()
         autoLayoutUIComponents()
     }

@@ -10,4 +10,5 @@ import Foundation
 protocol ViewModelDelegate {
     
     func viewModelDidUpdate()
+    func viewModelHasError()
 }
