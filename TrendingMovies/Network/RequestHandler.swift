@@ -7,25 +7,6 @@
 
 import Foundation
 
-/// This Enum represents request error types
-enum RequestError: Error {
-    case networkError(description: String)
-    case parsingError
-    case noData
-
-    var description: String {
-        switch self {
-        case .networkError(let description):
-            return description
-        case .parsingError:
-            return "Error while parsing json to data model"
-        case .noData:
-            return "No Data is returned from request"
-        }
-    }
-
-}
-
 /// This is RequestHandling implementation returns any Codable Data Model.
 class RequestHandler: RequestHandling {
 

@@ -12,3 +12,6 @@
 "Budget" = "Budget";
 "Genres" = "Genres";
 "IMDB" = "IMDB";
+"NetworkErrorMessage" = "Check your internet and try again.";
+"ParsingErrorMessage" = "Something went wrong Please try again.";
+"NoDataMessage" = "You 've reached the end of movies";
