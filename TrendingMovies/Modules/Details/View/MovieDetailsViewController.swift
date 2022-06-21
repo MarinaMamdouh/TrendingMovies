@@ -43,7 +43,11 @@ class MovieDetailsViewController: BaseViewController {
 // Styling UIComponents
 extension MovieDetailsViewController {
     
-    func styleMovieStatsView(){
+    func styleMovieTitleLabel(){
+        
+    }
+    
+    func styleMovieStatsView() {
         movieStatsView.viewModel = self.viewModel
         movieStatsView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -69,7 +73,7 @@ extension MovieDetailsViewController {
 
 // Handling Layout of UIComponents
 extension MovieDetailsViewController {
-    func layoutStatsView(){
+    func layoutStatsView() {
         self.view.addSubview(movieStatsView)
         NSLayoutConstraint.activate([
             movieStatsView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
@@ -78,7 +82,7 @@ extension MovieDetailsViewController {
             movieStatsView.bottomAnchor.constraint(equalTo: moviePosterImageView.bottomAnchor)
         ])
     }
-    func layoutImage(){
+    func layoutImage() {
         self.view.addSubview(moviePosterImageView)
         NSLayoutConstraint.activate([
             moviePosterImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),

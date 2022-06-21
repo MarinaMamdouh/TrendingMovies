@@ -23,7 +23,6 @@ class MovieStatisticsView: UIView {
 }
 
 // Main UI Handling
-
 extension MovieStatisticsView: UIHandling {
     func styleUIComponents() {
         styleStackView()

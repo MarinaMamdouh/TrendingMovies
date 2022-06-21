@@ -18,6 +18,10 @@ class MovieDetailsViewModel: ViewModelType {
     init(_ details: MovieDetails) {
         self.movieDetails = details
     }
+}
+
+// Logic of formatting values to prepare it for view
+extension MovieDetailsViewModel {
     
     func getFormattedVote() -> NSAttributedString {
         let formattedVoteString = NSMutableAttributedString()
@@ -44,14 +48,25 @@ class MovieDetailsViewModel: ViewModelType {
     
     func getFormattedBudget() -> NSAttributedString {
         let formattedBudgetString = NSMutableAttributedString(string: "\(String(localizedKey: Constants.budgetText)): ", attributes: [NSAttributedString.Key.font: Constants.Fonts.bodyFontBold])
+        
         let budgetString = "\(movieDetails.budget.toMoney)"
         let budgetAttributedString = NSAttributedString(string: budgetString, attributes: [NSAttributedString.Key.font: Constants.Fonts.smallFont])
+        
         formattedBudgetString.append(budgetAttributedString)
         return formattedBudgetString
     }
     
     func getGenres() -> NSAttributedString {
         let formattedGenreString = NSMutableAttributedString(string: "\(String(localizedKey: Constants.genresText)): ", attributes: [NSAttributedString.Key.font: Constants.Fonts.bodyFontBold])
+        
+        let genresString = getGenresString()
+        let genresAttributedString = NSAttributedString(string: genresString, attributes: [NSAttributedString.Key.font: Constants.Fonts.smallFont])
+        
+        formattedGenreString.append(genresAttributedString)
+        return formattedGenreString
+    }
+    
+    private func getGenresString() -> String {
         var genresString = ""
         var index = 0
         let lastIndex = movieDetails.genres.count - 1
@@ -62,8 +77,6 @@ class MovieDetailsViewModel: ViewModelType {
             }
             index += 1
         }
-        let genresAttributedString = NSAttributedString(string: genresString, attributes: [NSAttributedString.Key.font: Constants.Fonts.smallFont])
-        formattedGenreString.append(genresAttributedString)
-        return formattedGenreString
+        return genresString
     }
 }

@@ -149,6 +149,31 @@
 			path = Formatting;
 			sourceTree = "<group>";
 		};
+		F846496228620D810041701B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F849AD092859111200961633 /* MovieDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F846496328620D930041701B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F83ED090285F838700A24670 /* MovieDetailsViewController.swift */,
+				F83ED094285F969E00A24670 /* MovieStatisticsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F846496428620D9B0041701B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F83ED092285F83B500A24670 /* MovieDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F849ACD12858EF4D00961633 = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +198,6 @@
 				F859CBD6285E69A100F8DEBC /* AppDelegate */,
 				F859CBD3285E697C00F8DEBC /* Modules */,
 				F859CBDF285E6CC500F8DEBC /* Localization */,
-				F849AD0628590F0A00961633 /* Data Models */,
 				F83ED084285F79D600A24670 /* Caching */,
 				F859CBF0285E7CF700F8DEBC /* ImageHandling */,
 				F849ACF12858FC2C00961633 /* Network */,
@@ -206,14 +230,6 @@
 			path = TrendingMoviesTests;
 			sourceTree = "<group>";
 		};
-		F849AD0628590F0A00961633 /* Data Models */ = {
-			isa = PBXGroup;
-			children = (
-				F849AD092859111200961633 /* MovieDetails.swift */,
-			);
-			path = "Data Models";
-			sourceTree = "<group>";
-		};
 		F859CBD3285E697C00F8DEBC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,9 +252,9 @@
 		F859CBD5285E698A00F8DEBC /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				F83ED090285F838700A24670 /* MovieDetailsViewController.swift */,
-				F83ED092285F83B500A24670 /* MovieDetailsViewModel.swift */,
-				F83ED094285F969E00A24670 /* MovieStatisticsView.swift */,
+				F846496428620D9B0041701B /* ViewModel */,
+				F846496328620D930041701B /* View */,
+				F846496228620D810041701B /* Model */,
 			);
 			path = Details;
 			sourceTree = "<group>";
