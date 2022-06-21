@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension Constants{
+extension Constants {
     
-    enum ErrorMessages{
+    enum ErrorMessages {
         static let networkError = "NetworkErrorMessage"
         static let parsingDataError = "ParsingErrorMessage"
         static let noData = "NoDataMessage"

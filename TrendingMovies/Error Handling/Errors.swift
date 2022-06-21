@@ -24,10 +24,10 @@ enum RequestError: Error {
         }
     }
     
-    var localizedMessage:String {
+    var localizedMessage: String {
         switch self {
         case .networkError(_):
-            return String(localizedKey: Constants.ErrorMessages.networkErrorMessage)
+            return String(localizedKey: Constants.ErrorMessages.networkError)
         case .parsingError:
             return String(localizedKey: Constants.ErrorMessages.parsingDataError)
         case .noData:

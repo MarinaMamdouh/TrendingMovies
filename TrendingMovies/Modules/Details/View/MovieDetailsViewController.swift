@@ -43,7 +43,7 @@ class MovieDetailsViewController: BaseViewController {
 // Styling UIComponents
 extension MovieDetailsViewController {
     
-    func styleMovieTitleLabel(){
+    func styleMovieTitleLabel() {
         
     }
     
