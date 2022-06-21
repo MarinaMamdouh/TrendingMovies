@@ -68,6 +68,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let movieToBeDisplayed = viewModel.movies[indexPath.row]
         cell.configure(with: movieToBeDisplayed)
+        cell.selectionStyle = .none
         return cell
     }
     
